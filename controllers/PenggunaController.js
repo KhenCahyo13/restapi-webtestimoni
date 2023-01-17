@@ -4,7 +4,7 @@ const pool = require('../config/Database')
 const PenggunaController = {
     getAllPengguna: async (request, response) => {
         try {
-            const [rows, fields] = await pool.query(" SELECT * FROM pengguna")
+            const [rows, fields] = await pool.query(" select * from pengguna")
             response.status(201).json({ data: rows })
         } catch (error) {
             console.log(error)

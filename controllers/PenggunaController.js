@@ -49,12 +49,14 @@ const PenggunaController = {
     updatePengguna: async (request, response) => {
         try {
             const { nama, email, password, konfPassword } = request.body
+            const saltRounds = 10;
+            const hashedPassword =  await bcrypt.hash(password, saltRounds)
             const { id } = request.params
             if (konfPassword !== password) {
                 response.status(400).json({ msg: "Password dan Konfirmasi Password harus sama" })
             } else {
                 const query = 'UPDATE pengguna SET nama_pengguna = ?, email = ?, password = ? WHERE id_pengguna = ?'
-                const [rows, fields] = await pool.query(query, [nama, email, password, id])
+                const [rows, fields] = await pool.query(query, [nama, email, hashedPassword, id])
                 response.status(201).json({ msg: "Data berhasil di update" })
             }
         } catch (error) {

@@ -11,7 +11,7 @@ const pRouter = require('./routes/PenggunaRouter')
 app.get('/', (request, response) => {
     response.send("Selamat datang di RESTAPI Web JokiInformatikaYuk!")
 })
-app.use('/restapi/testimoni', pRouter)
+app.use('/restapi/pengguna', pRouter)
 
 const PORT = process.env.PORT || 4000
 

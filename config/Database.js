@@ -14,7 +14,7 @@ pool.getConnection((error, connection) => {
     if(error) {
         console.log(error)
     } else {
-        console.log("Database Connection Succesfully")
+        console.log("Database berhasil terhubung")
     }
 })
 

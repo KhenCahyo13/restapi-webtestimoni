@@ -1,8 +1,1 @@
 POST https://restapi-webtestimoni.vercel.app/restapi/testimoni HTTP/1.1
-
-{
-    "nama_pengguna": "Khen Cahyo",
-    "email": "khen@gmail.com",
-    "password": "khen123",
-    "confPassword":  "khen123"
-}

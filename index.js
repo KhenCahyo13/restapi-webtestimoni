@@ -1,10 +1,11 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 
 require('dotenv').config()
 
-app.use(express.urlencoded({ extended: false }))
-app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 const pRouter = require('./routes/PenggunaRouter')
 

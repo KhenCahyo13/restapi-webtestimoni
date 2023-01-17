@@ -9,7 +9,7 @@ const PenggunaController = {
         } catch (error) {
             console.log(error)
             response.json({
-                status: "error"
+                status: error
             })
         }
     },
